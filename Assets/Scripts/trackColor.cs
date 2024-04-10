@@ -16,6 +16,8 @@ public class trackColor : MonoBehaviour
         sprit = GetComponent<SpriteRenderer>();
         sprit.color = build.pickedColor;
 
+        //build.spawnedTracks.Add(this);
+
     }
 
     // Update is called once per frame

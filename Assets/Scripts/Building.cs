@@ -19,6 +19,8 @@ public class Building : MonoBehaviour
     public GameObject track10;
     public GameObject track11;
 
+    public GameObject test;
+
     Vector3 normScale = new Vector3(0.504899979f, 0.504899979f, 0.504899979f);
 
     Color none = new Color(0, 0, 0, 0);
@@ -31,6 +33,9 @@ public class Building : MonoBehaviour
 
     public Color randomColor;
     public Color pickedColor = new Color(0,0,0,0);
+
+    public List<GameObject> spawnedTracks = new List<GameObject>();
+ 
 
     // Start is called before the first frame update
     void Awake()
