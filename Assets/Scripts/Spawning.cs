@@ -7,12 +7,40 @@ public class Spawning : MonoBehaviour
     public GameObject station;
 
     public List<Vector3> posits = new List<Vector3>();
+    public List<SpriteRenderer> picker = new List<SpriteRenderer>();
 
-    //private Color colo;
+    public SpriteRenderer track0;
+    public SpriteRenderer track1;
+    public SpriteRenderer track2;
+    public SpriteRenderer track3;
+    public SpriteRenderer track4;
+    public SpriteRenderer track5;
+    public SpriteRenderer track6;
+    public SpriteRenderer track7;
+    public SpriteRenderer track8;
+    public SpriteRenderer track9;
+    public SpriteRenderer track10;
+    public SpriteRenderer track11;
 
-    // Start is called before the first frame update
+
+    public Building build;
+
     void Awake ()
     {
+        picker.Add(track0);
+        picker.Add(track1);
+        picker.Add(track2);
+        picker.Add(track3);
+        picker.Add(track4);
+        picker.Add(track5);
+        picker.Add(track6);
+        picker.Add(track7);
+        picker.Add(track8);
+        picker.Add(track9);
+        picker.Add(track10);
+        picker.Add(track11);
+
+
         posits.Add(new Vector3(-3.5f,4,-1));
         posits.Add(new Vector3(-3.5f,2.5f,-1));
         posits.Add(new Vector3(-3.5f,1,-1));
@@ -70,6 +98,10 @@ public class Spawning : MonoBehaviour
             Instantiate(station, posits[j], transform.rotation);
             //GetComponent<SpriteRenderer>().color = colo;
             posits.Remove(posits[j]);
+
+            picker[0].gameObject.SetActive(true);
+            picker[0].color = build.randomColor;
+            picker.Remove(picker[0]);
         }
 
     }

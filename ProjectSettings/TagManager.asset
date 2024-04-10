@@ -8,6 +8,8 @@ TagManager:
   - Horzs
   - Red Station
   - Red
+  - picker
+  - selected
   layers:
   - Default
   - TransparentFX

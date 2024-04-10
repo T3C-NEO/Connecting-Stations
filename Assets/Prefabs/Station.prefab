@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5263180537368454374}
   - component: {fileID: 5263180537368454369}
+  - component: {fileID: -2961377779528411596}
   m_Layer: 0
   m_Name: Station
   m_TagString: Untagged
@@ -84,3 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2961377779528411596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263180537368454368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438b6a8662d6b68468fe50a211a1f284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  build: {fileID: 6268489357834126177, guid: e30559db37de1304f8337e0dc8e00065, type: 3}
+  sprit: {fileID: 0}
