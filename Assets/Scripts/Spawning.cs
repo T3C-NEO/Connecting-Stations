@@ -162,23 +162,25 @@ public class Spawning : MonoBehaviour
 
     void Update()
     {
-        //summoning stations when you press space. trying to get random colors to work
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown("space"))
         {
-            //colo = new Color(Random.Range(0, 256), Random.Range(0, 256), Random.Range(0, 256), 1);
-            int i = Random.Range(0, positsGame.Count);
-            Instantiate(station, positsGame[i].transform.position, transform.rotation);
-            //GetComponent<SpriteRenderer>().color = colo;
-            positsGame.Remove(positsGame[i]);
-            int j = Random.Range(0, positsGame.Count);
-            Instantiate(station, positsGame[j].transform.position, transform.rotation);
-            //GetComponent<SpriteRenderer>().color = colo;
-            positsGame.Remove(positsGame[j]);
-
-            picker[0].gameObject.SetActive(true);
-            picker[0].color = build.randomColor;
-            picker.Remove(picker[0]);
+            //SpawnStation();
         }
+    }
+    public void SpawnStation()
+    {
+        //summoning stations when you press space. trying to get random colors to work
+    
+       int i = Random.Range(0, positsGame.Count);
+       Instantiate(station, positsGame[i].transform.position, transform.rotation);
+       positsGame.Remove(positsGame[i]);
+       int j = Random.Range(0, positsGame.Count);
+       Instantiate(station, positsGame[j].transform.position, transform.rotation);
+       positsGame.Remove(positsGame[j]);
+       
+       picker[0].gameObject.SetActive(true);
+       picker[0].color = build.randomColor;
+       picker.Remove(picker[0]);
 
     }
 }
