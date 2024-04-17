@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 174292628}
   - component: {fileID: 174292629}
   - component: {fileID: 174292630}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (7)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 186474022}
   - component: {fileID: 186474023}
   - component: {fileID: 186474024}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (10)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -3234,6 +3234,26 @@ MonoBehaviour:
   track9: {fileID: 528171821}
   track10: {fileID: 186474023}
   track11: {fileID: 746009558}
+  red: {r: 1, g: 0, b: 0, a: 1}
+  blue: {r: 1, g: 0, b: 0, a: 1}
+  orange: {r: 1, g: 0.388, b: 0.098, a: 1}
+  lightGreen: {r: 1, g: 0, b: 0, a: 1}
+  brown: {r: 1, g: 0, b: 0, a: 1}
+  gray: {r: 1, g: 0, b: 0, a: 1}
+  yellow: {r: 1, g: 0, b: 0, a: 1}
+  darkGray: {r: 1, g: 0, b: 0, a: 1}
+  brightRed: {r: 1, g: 0, b: 0, a: 1}
+  darkGreen: {r: 1, g: 0, b: 0, a: 1}
+  purple: {r: 1, g: 0, b: 0, a: 1}
+  darkPurple: {r: 1, g: 0, b: 0, a: 1}
+  darkBrown: {r: 1, g: 0, b: 0, a: 1}
+  lightBrown: {r: 1, g: 0, b: 0, a: 1}
+  cyan: {r: 1, g: 0, b: 0, a: 1}
+  randomColor: {r: 0, g: 0, b: 0, a: 0}
+  ColorList: []
+  randomColorList: []
+  random: 
+  pickedColor: {r: 0, g: 0, b: 0, a: 0}
   build: {fileID: 455820173}
 --- !u!114 &455820173
 MonoBehaviour:
@@ -3263,11 +3283,13 @@ MonoBehaviour:
   track: {fileID: 7467209179418826502, guid: b39ebf69f9fa71c41a64b055d4426466, type: 3}
   track2: {fileID: 1051324589893942916, guid: bfdad689a3b714241a81711f1ca22a31, type: 3}
   moneyText: {fileID: 999661705}
+  red: {r: 1, g: 0, b: 0, a: 1}
   randomColor: {r: 0, g: 0, b: 0, a: 0}
   randomColorList:
   - red
   random: 
   pickedColor: {r: 0, g: 0, b: 0, a: 0}
+  ttag: 
   spawnedTracks: []
 --- !u!1 &467578216
 GameObject:
@@ -3773,7 +3795,7 @@ GameObject:
   - component: {fileID: 522127160}
   - component: {fileID: 522127161}
   - component: {fileID: 522127162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (8)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -3884,7 +3906,7 @@ GameObject:
   - component: {fileID: 528171820}
   - component: {fileID: 528171821}
   - component: {fileID: 528171822}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (9)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -4733,7 +4755,7 @@ GameObject:
   - component: {fileID: 645230479}
   - component: {fileID: 645230480}
   - component: {fileID: 645230481}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (1)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -5729,7 +5751,7 @@ GameObject:
   - component: {fileID: 746009557}
   - component: {fileID: 746009558}
   - component: {fileID: 746009559}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (11)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -5840,7 +5862,7 @@ GameObject:
   - component: {fileID: 748509269}
   - component: {fileID: 748509268}
   - component: {fileID: 748509270}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -6062,7 +6084,7 @@ GameObject:
   - component: {fileID: 776569298}
   - component: {fileID: 776569299}
   - component: {fileID: 776569300}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (5)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -8336,7 +8358,7 @@ GameObject:
   - component: {fileID: 1146104285}
   - component: {fileID: 1146104286}
   - component: {fileID: 1146104287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (2)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -9282,7 +9304,7 @@ GameObject:
   - component: {fileID: 1233657233}
   - component: {fileID: 1233657234}
   - component: {fileID: 1233657235}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (4)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -11218,7 +11240,7 @@ GameObject:
   - component: {fileID: 1485731285}
   - component: {fileID: 1485731286}
   - component: {fileID: 1485731287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (3)
   m_TagString: picker
   m_Icon: {fileID: 0}
@@ -12880,7 +12902,7 @@ GameObject:
   - component: {fileID: 1802433933}
   - component: {fileID: 1802433934}
   - component: {fileID: 1802433935}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Track (6)
   m_TagString: picker
   m_Icon: {fileID: 0}

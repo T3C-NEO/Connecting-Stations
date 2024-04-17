@@ -60,6 +60,34 @@ public class Spawning : MonoBehaviour
     public SpriteRenderer track10;
     public SpriteRenderer track11;
 
+    public Color red = new Color(1, 0, 0, 1);
+
+    public Color blue = new Color(0, 0.224f, 0.651f, 1);
+    public Color orange = new Color(1, 0.388f, 0.098f, 1);
+    public Color lightGreen = new Color(0.424f, 0.745f, 0.271f, 1);
+    public Color brown = new Color(0.6f, 0.4f, 0.2f, 1);
+    public Color gray = new Color(1, 0, 0, 1);
+    public Color yellow = new Color(1, 0, 0, 1);
+    public Color darkGray = new Color(1, 0, 0, 1);
+    public Color brightRed = new Color(1, 0, 0, 1);
+    public Color darkGreen = new Color(1, 0, 0, 1);
+    public Color purple = new Color(1, 0, 0, 1);
+
+    public Color darkPurple = new Color(1, 0, 0, 1);
+    public Color darkBrown = new Color(1, 0, 0, 1);
+    public Color lightBrown = new Color(1, 0, 0, 1);
+
+    public Color cyan = new Color(1, 0, 0, 1);
+
+    public Color randomColor;
+    public List<Color> ColorList = new List<Color>();
+    
+    public List<string> randomColorList = new List<string>();
+    public string random;
+    int randomInt;
+    public Color pickedColor = new Color(0, 0, 0, 0);
+
+
 
     public Building build;
 
@@ -115,49 +143,57 @@ public class Spawning : MonoBehaviour
         positsGame.Add(pos33);
         positsGame.Add(pos34);
         positsGame.Add(pos35);
-        /*
-        posits.add(new vector3(-3.5f,4,-1));
-        posits.add(new vector3(-3.5f,2.5f,-1));
-        posits.add(new vector3(-3.5f,1,-1));
-        posits.add(new vector3(-3.5f,-0.5f,-1));
-        posits.add(new vector3(-3.5f,-2f,-1));
-        posits.add(new vector3(-3.5f,-3.5f,-1));
+     
+    }
+    private void Start()
+    {
+        ColorList.Add(blue);
+        ColorList.Add(orange);
+        ColorList.Add(lightGreen);
+        ColorList.Add(brown);
+        ColorList.Add(gray);
+        ColorList.Add(yellow);
+        ColorList.Add(darkGray);
+        ColorList.Add(brightRed);
+        ColorList.Add(darkGreen);
+        ColorList.Add(purple);
 
-        posits.add(new vector3(-2f, 4, -1));
-        posits.add(new vector3(-2f, 2.5f, -1));
-        posits.add(new vector3(-2f, 1, -1));
-        posits.add(new vector3(-2f, -0.5f, -1));
-        posits.add(new vector3(-2f, -2f, -1));
-        posits.add(new vector3(-2f, -3.5f, -1));
+        ColorList.Add(darkPurple);
 
-        posits.add(new vector3(-0.5f, 4, -1));
-        posits.add(new vector3(-0.5f, 2.5f, -1));
-        posits.add(new vector3(-0.5f, 1, -1));
-        posits.add(new vector3(-0.5f, -0.5f, -1));
-        posits.add(new vector3(-0.5f, -2f, -1));
-        posits.add(new vector3(-0.5f, -3.5f, -1));
+        ColorList.Add(darkBrown);
+        ColorList.Add(lightBrown);
 
-        posits.add(new vector3(1, 4, -1));
-        posits.add(new vector3(1, 2.5f, -1));
-        posits.add(new vector3(1, 1, -1));
-        posits.add(new vector3(1, -0.5f, -1));
-        posits.add(new vector3(1, -2f, -1));
-        posits.add(new vector3(1, -3.5f, -1));
+        ColorList.Add(cyan);
 
-        posits.add(new vector3(2.5f, 4, -1));
-        posits.add(new vector3(2.5f, 2.5f, -1));
-        posits.add(new vector3(2.5f, 1, -1));
-        posits.add(new vector3(2.5f, -0.5f, -1));
-        posits.add(new vector3(2.5f, -2f, -1));
-        posits.add(new vector3(2.5f, -3.5f, -1));
 
-        posits.add(new vector3(4, 4, -1));
-        posits.add(new vector3(4, 2.5f, -1));
-        posits.add(new vector3(4, 1, -1));
-        posits.add(new vector3(4, -0.5f, -1));
-        posits.add(new vector3(4, -2f, -1));
-        posits.add(new vector3(4, -3.5f, -1));
-        */
+
+        randomColorList.Add("blue");
+        randomColorList.Add("orange");
+        randomColorList.Add("light green");
+        randomColorList.Add("brown");
+        randomColorList.Add("gray");
+        randomColorList.Add("yellow");
+        randomColorList.Add("dark gray");
+        randomColorList.Add("bright red");
+        randomColorList.Add("dark green");
+        randomColorList.Add("purple");
+        //randomColorList.Add("strange green");
+        randomColorList.Add("dark purple");
+        //randomColorList.Add("dark gray2");
+        randomColorList.Add("dark brown");
+        randomColorList.Add("light brown");
+        //randomColorList.Add("orange again");
+        //randomColorList.Add("teal");
+        //randomColorList.Add("more green");
+        //randomColorList.Add("blue2");
+        //randomColorList.Add("even more red");
+        //randomColorList.Add("dark pink");
+        randomColorList.Add("cyan");
+        //randomColorList.Add("blue again again");
+        //randomColorList.Add("gods more green");
+        //randomColorList.Add("EVEN MORE RED");
+        //randomColorList.Add("purple again");
+        //randomColorList.Add("lighter orange");
     }
 
     void Update()
@@ -170,23 +206,27 @@ public class Spawning : MonoBehaviour
     public void SpawnStation()
     {
         //summoning stations when you press space. trying to get random colors to work
-        build.random = build.randomColorList[Random.Range(0, build.randomColorList.Count)];
-        if (build.random == "red")
-        {
-            build.randomColor = red;
-        }
+        randomInt = Random.Range(0, randomColorList.Count);
+        random = randomColorList[randomInt];
+        randomColor = ColorList[randomInt];
+        Debug.Log(random);
+        Debug.Log(randomColor);
 
         int i = Random.Range(0, positsGame.Count);
-       Instantiate(station, positsGame[i].transform.position, transform.rotation);
-       positsGame.Remove(positsGame[i]);
-       int j = Random.Range(0, positsGame.Count);
-       Instantiate(station, positsGame[j].transform.position, transform.rotation);
-       positsGame.Remove(positsGame[j]);
+        Instantiate(station, positsGame[i].transform.position, transform.rotation);
+        positsGame.Remove(positsGame[i]);
+        int j = Random.Range(0, positsGame.Count);
+        Instantiate(station, positsGame[j].transform.position, transform.rotation);
+        positsGame.Remove(positsGame[j]);
        
-       picker[0].gameObject.SetActive(true);
-       picker[0].color = build.randomColor;
-       build.randomColorList.Remove(build.random);
-       picker.Remove(picker[0]);
+        picker[0].gameObject.SetActive(true);
+        picker[0].color = randomColor;
+
+        picker[0].tag = random;
+        randomColorList.Remove(randomColorList[randomInt]);
+        ColorList.Remove(ColorList[randomInt]);
+
+        picker.Remove(picker[0]);
 
     }
 }

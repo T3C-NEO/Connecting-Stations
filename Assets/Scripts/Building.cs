@@ -31,12 +31,14 @@ public class Building : MonoBehaviour
     public TMP_Text moneyText;
     private int money = 300;
 
-    Color red = new Color(1, 0, 0, 1);
+    public Color red = new Color(1, 0, 0, 1);
 
     public Color randomColor;
     public List<string> randomColorList = new List<string>();
     public string random;
     public Color pickedColor = new Color(0,0,0,0);
+
+    public string ttag;
 
 
     public List<GameObject> spawnedTracks = new List<GameObject>();
@@ -52,13 +54,8 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(randomColorList[0]);
         var hit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        random = randomColorList[Random.Range(0, randomColorList.Count)];
-        if (random == "red")
-        {
-            randomColor = red;
-        }
+        
 
         if (hit.collider)
         {
@@ -77,9 +74,11 @@ public class Building : MonoBehaviour
                 Destroy(hit.collider.gameObject);
             }
 
-            if (hit.collider.gameObject.tag == "picker" && Input.GetMouseButtonDown(0))
+            if (hit.collider.gameObject.layer == 3 && Input.GetMouseButtonDown(0))
             {
                 pickedColor = hit.collider.gameObject.GetComponent<SpriteRenderer>().color;
+                ttag = hit.collider.gameObject.tag;
+
                 track0.transform.localScale = normScale;
                 track1.transform.localScale = normScale;
                 track22.transform.localScale = normScale;
