@@ -31,8 +31,13 @@ public class Building : MonoBehaviour
     public TMP_Text moneyText;
     private int money = 300;
 
+    Color red = new Color(1, 0, 0, 1);
+
     public Color randomColor;
+    public List<string> randomColorList = new List<string>();
+    public string random;
     public Color pickedColor = new Color(0,0,0,0);
+
 
     public List<GameObject> spawnedTracks = new List<GameObject>();
  
@@ -47,8 +52,13 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(randomColorList[0]);
         var hit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        randomColor = new Color(Random.Range(0f, 1.0f), Random.Range(0f, 1.0f), Random.Range(0f, 1.0f), 1);
+        random = randomColorList[Random.Range(0, randomColorList.Count)];
+        if (random == "red")
+        {
+            randomColor = red;
+        }
 
         if (hit.collider)
         {

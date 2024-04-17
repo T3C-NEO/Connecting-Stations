@@ -3264,6 +3264,9 @@ MonoBehaviour:
   track2: {fileID: 1051324589893942916, guid: bfdad689a3b714241a81711f1ca22a31, type: 3}
   moneyText: {fileID: 999661705}
   randomColor: {r: 0, g: 0, b: 0, a: 0}
+  randomColorList:
+  - red
+  random: 
   pickedColor: {r: 0, g: 0, b: 0, a: 0}
   spawnedTracks: []
 --- !u!1 &467578216

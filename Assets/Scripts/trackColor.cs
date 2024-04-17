@@ -15,6 +15,7 @@ public class trackColor : MonoBehaviour
         build = a.GetComponent<Building>();
         sprit = GetComponent<SpriteRenderer>();
         sprit.color = build.pickedColor;
+        tag = build.randomColor.ToString();
 
         //build.spawnedTracks.Add(this);
 

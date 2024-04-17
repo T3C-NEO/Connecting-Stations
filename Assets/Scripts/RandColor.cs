@@ -15,6 +15,7 @@ public class RandColor : MonoBehaviour
         build = a.GetComponent<Building>();
         sprit = GetComponent<SpriteRenderer>();
         sprit.color = build.randomColor;
+        tag = build.random;
 
     }
 

@@ -170,8 +170,13 @@ public class Spawning : MonoBehaviour
     public void SpawnStation()
     {
         //summoning stations when you press space. trying to get random colors to work
-    
-       int i = Random.Range(0, positsGame.Count);
+        build.random = build.randomColorList[Random.Range(0, build.randomColorList.Count)];
+        if (build.random == "red")
+        {
+            build.randomColor = red;
+        }
+
+        int i = Random.Range(0, positsGame.Count);
        Instantiate(station, positsGame[i].transform.position, transform.rotation);
        positsGame.Remove(positsGame[i]);
        int j = Random.Range(0, positsGame.Count);
@@ -180,6 +185,7 @@ public class Spawning : MonoBehaviour
        
        picker[0].gameObject.SetActive(true);
        picker[0].color = build.randomColor;
+       build.randomColorList.Remove(build.random);
        picker.Remove(picker[0]);
 
     }
