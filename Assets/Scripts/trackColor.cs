@@ -8,6 +8,10 @@ public class trackColor : MonoBehaviour
     public GameObject a;
 
     public SpriteRenderer sprit;
+
+    public bool connect = false;
+    int connections = 2;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,5 +29,18 @@ public class trackColor : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+    
+        if (col.gameObject.tag == this.gameObject.tag)
+        {
+            connections--;
+            if (connections == 0)
+            {
+                connect = true;
+            }
+        }
     }
 }

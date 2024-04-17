@@ -19,7 +19,6 @@ public class spawnPoint : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D col)
     {
-        Debug.Log("Hello: " + gameObject.name);
         del--;
         if (del == 0)
         {

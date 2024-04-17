@@ -7,6 +7,8 @@ public class RandColor : MonoBehaviour
     public Spawning build;
     public GameObject a;
 
+    public bool connected = false;
+
     public SpriteRenderer sprit;
     // Start is called before the first frame update
     void Start()
@@ -23,5 +25,23 @@ public class RandColor : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnCollisionStay2D(Collision2D col)
+    {
+    
+        if (col.gameObject.tag == this.gameObject.tag && col.gameObject.GetComponent<trackColor>().connect == true)
+        {
+            Debug.Log("yert");
+            Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+            if (build.connectingStations.Contains(tag))
+            {
+                connected = true;
+                build.connectedStations.Add(tag);
+
+            }else
+            {
+                build.connectingStations.Add(tag);
+            }
+        }
     }
 }

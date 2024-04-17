@@ -29,7 +29,7 @@ public class Building : MonoBehaviour
     public GameObject track;
     public GameObject track2;
     public TMP_Text moneyText;
-    private int money = 300;
+    public int money = 300;
 
     public Color red = new Color(1, 0, 0, 1);
 
@@ -54,6 +54,8 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
+        moneyText.text = "$"+money;
         var hit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
         
 

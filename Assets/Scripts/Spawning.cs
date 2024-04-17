@@ -66,18 +66,19 @@ public class Spawning : MonoBehaviour
     public Color orange = new Color(1, 0.388f, 0.098f, 1);
     public Color lightGreen = new Color(0.424f, 0.745f, 0.271f, 1);
     public Color brown = new Color(0.6f, 0.4f, 0.2f, 1);
-    public Color gray = new Color(1, 0, 0, 1);
-    public Color yellow = new Color(1, 0, 0, 1);
-    public Color darkGray = new Color(1, 0, 0, 1);
-    public Color brightRed = new Color(1, 0, 0, 1);
-    public Color darkGreen = new Color(1, 0, 0, 1);
-    public Color purple = new Color(1, 0, 0, 1);
+    public Color gray = new Color(0.655f, 0.663f, 0.675f, 1);
+    public Color yellow = new Color(0.988f, 0.8f, 0.039f, 1);
+    public Color darkGray = new Color(0.502f, 0.506f, 0.514f, 1);
+    public Color brightRed = new Color(0.933f, 0.208f, 0.18f, 1);
+    public Color darkGreen = new Color(0, 0.576f, 0.235f, 1);
+    public Color purple = new Color(0.725f, 0.2f, 0.678f, 1);
 
-    public Color darkPurple = new Color(1, 0, 0, 1);
-    public Color darkBrown = new Color(1, 0, 0, 1);
-    public Color lightBrown = new Color(1, 0, 0, 1);
+    public Color darkPurple = new Color(0.678f, 0.149f, 0.62f, 1);
 
-    public Color cyan = new Color(1, 0, 0, 1);
+    public Color darkBrown = new Color(0.431f, 0.196f, 0.098f, 1);
+    public Color lightBrown = new Color(0.808f, 0.557f, 0, 1);
+
+    public Color cyan = new Color(0, 0.631f, 0.871f, 1);
 
     public Color randomColor;
     public List<Color> ColorList = new List<Color>();
@@ -87,7 +88,8 @@ public class Spawning : MonoBehaviour
     int randomInt;
     public Color pickedColor = new Color(0, 0, 0, 0);
 
-
+    public List<string> connectingStations = new List<string>();
+    public List<string> connectedStations = new List<string>();
 
     public Building build;
 
@@ -165,7 +167,7 @@ public class Spawning : MonoBehaviour
 
         ColorList.Add(cyan);
 
-
+        
 
         randomColorList.Add("blue");
         randomColorList.Add("orange");
@@ -196,12 +198,9 @@ public class Spawning : MonoBehaviour
         //randomColorList.Add("lighter orange");
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            //SpawnStation();
-        }
+        build.money += connectedStations.Count;
     }
     public void SpawnStation()
     {
@@ -209,8 +208,6 @@ public class Spawning : MonoBehaviour
         randomInt = Random.Range(0, randomColorList.Count);
         random = randomColorList[randomInt];
         randomColor = ColorList[randomInt];
-        Debug.Log(random);
-        Debug.Log(randomColor);
 
         int i = Random.Range(0, positsGame.Count);
         Instantiate(station, positsGame[i].transform.position, transform.rotation);
