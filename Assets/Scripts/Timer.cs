@@ -7,7 +7,10 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
-    int moneyTime;
+    public List<int> moneyTime = new List<int>();
+    int moneyTime2;
+
+
 
     public Spawning scrip;
     public Building scrip2;
@@ -21,16 +24,24 @@ public class Timer : MonoBehaviour
         else if (remainingTime < 0)
         {
             remainingTime = 10;
-            moneyTime = 9;
+            moneyTime2 = 9;
             scrip2.money += (scrip.connectedStations.Count*10);
             scrip.SpawnStation();
+            moneyTime.Clear();
+            for (int i = 0; i < scrip.connectedStations.Count; i++)
+            {
+                moneyTime.Add(GameObject.FindGameObjectsWithTag(scrip.connectedStations[i]).Length-2);
+            }
             //timerText.color = Color.red;
         }
 
-        if (remainingTime < moneyTime)
+        if (remainingTime < moneyTime2)
         {
-            scrip2.money += (scrip.connectedStations.Count*10);
-            moneyTime--;
+            for (int i = 0; i < moneyTime.Count; i++)
+            {
+                scrip2.money += 20/moneyTime[i];
+            }
+            moneyTime2--;
         }
 
         remainingTime -= Time.deltaTime;
