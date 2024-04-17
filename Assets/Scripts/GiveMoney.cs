@@ -18,7 +18,7 @@ public class GiveMoney : MonoBehaviour
 
     public void Press()
     {
- 	CurrencySystem.money += 25;
+ 	//CurrencySystem.money += 25;
 	//CurrencySystem.UpdateMoney();
     }
 }

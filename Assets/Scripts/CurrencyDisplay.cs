@@ -16,6 +16,6 @@ public class CurrencyDisplay : MonoBehaviour
     void Update()
     {
         string[] temp = text.text.Split('$');
-	text.text = temp[0] + "$" + CurrencySystem.money;
+	//text.text = temp[0] + "$" + CurrencySystem.count;
     }
 }
