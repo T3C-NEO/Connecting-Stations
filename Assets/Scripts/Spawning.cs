@@ -198,10 +198,6 @@ public class Spawning : MonoBehaviour
         //randomColorList.Add("lighter orange");
     }
 
-    void FixedUpdate()
-    {
-        build.money += connectedStations.Count;
-    }
     public void SpawnStation()
     {
         //summoning stations when you press space. trying to get random colors to work

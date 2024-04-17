@@ -10,7 +10,9 @@ public class trackColor : MonoBehaviour
     public SpriteRenderer sprit;
 
     public bool connect = false;
-    int connections = 2;
+    public bool station = false;
+    public bool stationConnect = false;
+    public int connections = 2;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,16 +33,40 @@ public class trackColor : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionStay2D(Collision2D col)
     {
     
         if (col.gameObject.tag == this.gameObject.tag)
         {
-            connections--;
-            if (connections == 0)
+            if (col.gameObject.name == "Station(Clone)")
             {
-                connect = true;
+                station = true;
+                connections--;
+                if (connections == 0)
+                {
+                    connect = true;
+                }
             }
+            if (col.gameObject.name != "Station(Clone)" && (col.gameObject.GetComponent<trackColor>().station == true || col.gameObject.GetComponent<trackColor>().stationConnect == true))
+            {
+                if (station == false)
+                {
+                    stationConnect = true;
+                    connections--;
+                    if (connections == 0)
+                    {
+                        connect = true;
+                    }
+                }   
+            }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+    
+        if (col.gameObject.tag != this.gameObject.tag && col.gameObject.name != this.gameObject.name)
+        {
+            build.money -= 10;
         }
     }
 }

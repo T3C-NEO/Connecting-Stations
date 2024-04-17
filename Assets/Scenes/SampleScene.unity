@@ -3235,25 +3235,27 @@ MonoBehaviour:
   track10: {fileID: 186474023}
   track11: {fileID: 746009558}
   red: {r: 1, g: 0, b: 0, a: 1}
-  blue: {r: 1, g: 0, b: 0, a: 1}
+  blue: {r: 0, g: 0.224, b: 0.651, a: 1}
   orange: {r: 1, g: 0.388, b: 0.098, a: 1}
-  lightGreen: {r: 1, g: 0, b: 0, a: 1}
-  brown: {r: 1, g: 0, b: 0, a: 1}
+  lightGreen: {r: 0.424, g: 0.745, b: 0.271, a: 1}
+  brown: {r: 0.6, g: 0.4, b: 0.2, a: 1}
   gray: {r: 1, g: 0, b: 0, a: 1}
-  yellow: {r: 1, g: 0, b: 0, a: 1}
-  darkGray: {r: 1, g: 0, b: 0, a: 1}
-  brightRed: {r: 1, g: 0, b: 0, a: 1}
-  darkGreen: {r: 1, g: 0, b: 0, a: 1}
-  purple: {r: 1, g: 0, b: 0, a: 1}
-  darkPurple: {r: 1, g: 0, b: 0, a: 1}
-  darkBrown: {r: 1, g: 0, b: 0, a: 1}
-  lightBrown: {r: 1, g: 0, b: 0, a: 1}
-  cyan: {r: 1, g: 0, b: 0, a: 1}
+  yellow: {r: 0.988, g: 0.8, b: 0.039, a: 1}
+  darkGray: {r: 0.502, g: 0.506, b: 0.514, a: 1}
+  brightRed: {r: 0.933, g: 0.208, b: 0.18, a: 1}
+  darkGreen: {r: 0, g: 0.576, b: 0.235, a: 1}
+  purple: {r: 0.725, g: 0.2, b: 0.678, a: 1}
+  darkPurple: {r: 0.678, g: 0.149, b: 0.62, a: 1}
+  darkBrown: {r: 0.431, g: 0.196, b: 0.098, a: 1}
+  lightBrown: {r: 0.808, g: 0.557, b: 0, a: 1}
+  cyan: {r: 0, g: 0.631, b: 0.871, a: 1}
   randomColor: {r: 0, g: 0, b: 0, a: 0}
   ColorList: []
   randomColorList: []
   random: 
   pickedColor: {r: 0, g: 0, b: 0, a: 0}
+  connectingStations: []
+  connectedStations: []
   build: {fileID: 455820173}
 --- !u!114 &455820173
 MonoBehaviour:
@@ -3283,6 +3285,7 @@ MonoBehaviour:
   track: {fileID: 7467209179418826502, guid: b39ebf69f9fa71c41a64b055d4426466, type: 3}
   track2: {fileID: 1051324589893942916, guid: bfdad689a3b714241a81711f1ca22a31, type: 3}
   moneyText: {fileID: 999661705}
+  money: 300
   red: {r: 1, g: 0, b: 0, a: 1}
   randomColor: {r: 0, g: 0, b: 0, a: 0}
   randomColorList:
@@ -3442,6 +3445,7 @@ MonoBehaviour:
   timerText: {fileID: 467578218}
   remainingTime: 5
   scrip: {fileID: 455820172}
+  scrip2: {fileID: 455820173}
 --- !u!1 &470532114
 GameObject:
   m_ObjectHideFlags: 0
