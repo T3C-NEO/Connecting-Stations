@@ -31,7 +31,6 @@ public class RandColor : MonoBehaviour
     
         if (col.gameObject.tag == this.gameObject.tag && col.gameObject.GetComponent<trackColor>().connect == true)
         {
-            Debug.Log("yert");
             Destroy(this.gameObject.GetComponent<BoxCollider2D>());
             if (build.connectingStations.Contains(tag))
             {
