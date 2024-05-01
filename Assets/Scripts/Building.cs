@@ -21,6 +21,7 @@ public class Building : MonoBehaviour
     public GameObject track12;
     public GameObject track13;
     public GameObject track14;
+    public GameObject track15;
 
     public GameObject test;
 
@@ -34,7 +35,6 @@ public class Building : MonoBehaviour
     public TMP_Text moneyText;
     public int money = 300;
 
-    public Color red = new Color(1, 0, 0, 1);
 
     public Color randomColor;
     public List<string> randomColorList = new List<string>();
@@ -99,6 +99,7 @@ public class Building : MonoBehaviour
                 track12.transform.localScale = normScale;
                 track13.transform.localScale = normScale;
                 track14.transform.localScale = normScale;
+                track15.transform.localScale = normScale;
 
                 hit.collider.gameObject.transform.localScale = new Vector3(0.656369984f, 0.656369984f, 0.656369984f);
             }

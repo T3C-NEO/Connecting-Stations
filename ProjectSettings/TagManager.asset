@@ -25,6 +25,8 @@ TagManager:
   - dark brown
   - light brown
   - cyan
+  - pale
+  - pink
   layers:
   - Default
   - TransparentFX

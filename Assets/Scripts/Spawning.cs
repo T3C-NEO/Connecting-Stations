@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Spawning : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class Spawning : MonoBehaviour
     public SpriteRenderer track12;
     public SpriteRenderer track13;
     public SpriteRenderer track14;
+    public SpriteRenderer track15;
 
     public Color red = new Color(1, 0, 0, 1);
 
@@ -76,12 +78,14 @@ public class Spawning : MonoBehaviour
     public Color darkGreen = new Color(0, 0.576f, 0.235f, 1);
     public Color purple = new Color(0.725f, 0.2f, 0.678f, 1);
 
-    public Color darkPurple = new Color(0.678f, 0.149f, 0.62f, 1);
+    public Color darkPurple = new Color(0.376f, 0.149f, 0.62f, 1);
 
     public Color darkBrown = new Color(0.431f, 0.196f, 0.098f, 1);
     public Color lightBrown = new Color(0.808f, 0.557f, 0, 1);
 
     public Color cyan = new Color(0, 0.631f, 0.871f, 1);
+    public Color pale = new Color(0.604f, 0.714f, 0.827f, 1);
+    public Color pink = new Color(0.886f, 0.494f, 0.651f, 1);
 
     public Color randomColor;
     public List<Color> ColorList = new List<Color>();
@@ -93,6 +97,9 @@ public class Spawning : MonoBehaviour
 
     public List<string> connectingStations = new List<string>();
     public List<string> connectedStations = new List<string>();
+
+
+    public List<string> stationNames = new List<string>();
 
     public Building build;
 
@@ -113,6 +120,7 @@ public class Spawning : MonoBehaviour
         picker.Add(track12);
         picker.Add(track13);
         picker.Add(track14);
+        picker.Add(track15);
 
 
         positsGame.Add(pos0);
@@ -151,6 +159,44 @@ public class Spawning : MonoBehaviour
         positsGame.Add(pos33);
         positsGame.Add(pos34);
         positsGame.Add(pos35);
+
+        stationNames.Add("A");
+        stationNames.Add("B");
+        stationNames.Add("C");
+        stationNames.Add("D");
+        stationNames.Add("E");
+        stationNames.Add("F");
+        stationNames.Add("G");
+        stationNames.Add("H");
+        stationNames.Add("I");
+        stationNames.Add("J");
+        stationNames.Add("K");
+        stationNames.Add("L");
+        stationNames.Add("M");
+        stationNames.Add("N");
+        stationNames.Add("O");
+        stationNames.Add("P");
+        stationNames.Add("Q");
+        stationNames.Add("R");
+        stationNames.Add("S");
+        stationNames.Add("T");
+        stationNames.Add("U");
+        stationNames.Add("V");
+        stationNames.Add("W");
+        stationNames.Add("X");
+        stationNames.Add("Y");
+        stationNames.Add("Z");
+        stationNames.Add("1");
+        stationNames.Add("2");
+        stationNames.Add("3");
+        stationNames.Add("4");
+        stationNames.Add("5");
+        stationNames.Add("6");
+        stationNames.Add("7");
+        stationNames.Add("8");
+        stationNames.Add("9");
+        stationNames.Add("0");
+        stationNames.Add("$");
      
     }
     private void Start()
@@ -172,6 +218,8 @@ public class Spawning : MonoBehaviour
         ColorList.Add(lightBrown);
 
         ColorList.Add(cyan);
+        ColorList.Add(pale);
+        ColorList.Add(pink);
 
         
 
@@ -197,6 +245,8 @@ public class Spawning : MonoBehaviour
         //randomColorList.Add("even more red");
         //randomColorList.Add("dark pink");
         randomColorList.Add("cyan");
+        randomColorList.Add("pale");
+        randomColorList.Add("pink");
         //randomColorList.Add("blue again again");
         //randomColorList.Add("gods more green");
         //randomColorList.Add("EVEN MORE RED");
@@ -217,7 +267,10 @@ public class Spawning : MonoBehaviour
         int j = Random.Range(0, positsGame.Count);
         Instantiate(station, positsGame[j].transform.position, transform.rotation);
         positsGame.Remove(positsGame[j]);
+
+        int k = Random.Range(0, stationNames.Count);
        
+        picker[0].gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = stationNames[k];
         picker[0].gameObject.SetActive(true);
         picker[0].color = randomColor;
 
@@ -226,6 +279,7 @@ public class Spawning : MonoBehaviour
         ColorList.Remove(ColorList[randomInt]);
 
         picker.Remove(picker[0]);
+        stationNames.Remove(stationNames[k]);
 
     }
 }
