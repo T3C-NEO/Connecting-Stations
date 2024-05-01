@@ -256,30 +256,35 @@ public class Spawning : MonoBehaviour
 
     public void SpawnStation()
     {
-        //summoning stations when you press space. trying to get random colors to work
-        randomInt = Random.Range(0, randomColorList.Count);
-        random = randomColorList[randomInt];
-        randomColor = ColorList[randomInt];
+        if (positsGame.Count > 1)
+        {
+            //summoning stations when you press space. trying to get random colors to work
+            randomInt = Random.Range(0, randomColorList.Count);
+            random = randomColorList[randomInt];
+            randomColor = ColorList[randomInt];
 
-        int i = Random.Range(0, positsGame.Count);
-        Instantiate(station, positsGame[i].transform.position, transform.rotation);
-        positsGame.Remove(positsGame[i]);
-        int j = Random.Range(0, positsGame.Count);
-        Instantiate(station, positsGame[j].transform.position, transform.rotation);
-        positsGame.Remove(positsGame[j]);
+            int i = Random.Range(0, positsGame.Count);
+            Instantiate(station, positsGame[i].transform.position, transform.rotation);
+            positsGame.Remove(positsGame[i]);
+            int j = Random.Range(0, positsGame.Count);
+            Instantiate(station, positsGame[j].transform.position, transform.rotation);
+            positsGame.Remove(positsGame[j]);
 
-        int k = Random.Range(0, stationNames.Count);
+            int k = Random.Range(0, stationNames.Count);
        
-        picker[0].gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = stationNames[k];
-        picker[0].gameObject.SetActive(true);
-        picker[0].color = randomColor;
+            picker[0].gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = stationNames[k];
+            picker[0].gameObject.SetActive(true);
+            picker[0].color = randomColor;
 
-        picker[0].tag = random;
-        randomColorList.Remove(randomColorList[randomInt]);
-        ColorList.Remove(ColorList[randomInt]);
+            picker[0].tag = random;
+            randomColorList.Remove(randomColorList[randomInt]);
+            ColorList.Remove(ColorList[randomInt]);
 
-        picker.Remove(picker[0]);
-        stationNames.Remove(stationNames[k]);
-
+            picker.Remove(picker[0]);
+            stationNames.Remove(stationNames[k]);
+        } else
+        {
+            Debug.Log(positsGame.Count);
+        }
     }
 }
