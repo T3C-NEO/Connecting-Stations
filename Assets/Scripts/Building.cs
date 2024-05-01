@@ -18,6 +18,9 @@ public class Building : MonoBehaviour
     public GameObject track9;
     public GameObject track10;
     public GameObject track11;
+    public GameObject track12;
+    public GameObject track13;
+    public GameObject track14;
 
     public GameObject test;
 
@@ -93,6 +96,9 @@ public class Building : MonoBehaviour
                 track9.transform.localScale = normScale;
                 track10.transform.localScale = normScale;
                 track11.transform.localScale = normScale;
+                track12.transform.localScale = normScale;
+                track13.transform.localScale = normScale;
+                track14.transform.localScale = normScale;
 
                 hit.collider.gameObject.transform.localScale = new Vector3(0.656369984f, 0.656369984f, 0.656369984f);
             }

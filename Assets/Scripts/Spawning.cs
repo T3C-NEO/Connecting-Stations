@@ -59,6 +59,9 @@ public class Spawning : MonoBehaviour
     public SpriteRenderer track9;
     public SpriteRenderer track10;
     public SpriteRenderer track11;
+    public SpriteRenderer track12;
+    public SpriteRenderer track13;
+    public SpriteRenderer track14;
 
     public Color red = new Color(1, 0, 0, 1);
 
@@ -107,6 +110,9 @@ public class Spawning : MonoBehaviour
         picker.Add(track9);
         picker.Add(track10);
         picker.Add(track11);
+        picker.Add(track12);
+        picker.Add(track13);
+        picker.Add(track14);
 
 
         positsGame.Add(pos0);

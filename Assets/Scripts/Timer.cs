@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
         }
-        else if (remainingTime < 0)
+        else if (remainingTime <= 0)
         {
             remainingTime = 10;
             moneyTime2 = 9;
@@ -43,10 +43,10 @@ public class Timer : MonoBehaviour
             }
             moneyTime2--;
         }
-
+        
         remainingTime -= Time.deltaTime;
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{00:00}:{01:00}", minutes, seconds);
+        timerText.text = string.Format("{00}", seconds);
     }
 }
