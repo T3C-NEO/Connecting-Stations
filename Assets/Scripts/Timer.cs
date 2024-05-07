@@ -17,20 +17,28 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        if (remainingTime >= 0)
+        {
+            
+        }
         if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
+            remainingTime -= Time.deltaTime;
+            int minutes = Mathf.FloorToInt(remainingTime / 60);
+            int seconds = Mathf.FloorToInt(remainingTime % 60);
+            timerText.text = string.Format("{00}", seconds);
         }
         else if (remainingTime <= 0)
         {
-            remainingTime = 10;
+            remainingTime = 20;
             moneyTime2 = 9;
-            scrip2.money += (scrip.connectedStations.Count*10);
+            scrip2.money += (scrip.connectedStations.Count * 20);
             scrip.SpawnStation();
             moneyTime.Clear();
             for (int i = 0; i < scrip.connectedStations.Count; i++)
             {
-                moneyTime.Add(GameObject.FindGameObjectsWithTag(scrip.connectedStations[i]).Length-2);
+                moneyTime.Add(GameObject.FindGameObjectsWithTag(scrip.connectedStations[i]).Length - 2);
             }
             //timerText.color = Color.red;
         }
@@ -39,14 +47,10 @@ public class Timer : MonoBehaviour
         {
             for (int i = 0; i < moneyTime.Count; i++)
             {
-                scrip2.money += 20/moneyTime[i];
+                scrip2.money += 20 / moneyTime[i];
             }
             moneyTime2--;
         }
         
-        remainingTime -= Time.deltaTime;
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{00}", seconds);
     }
 }

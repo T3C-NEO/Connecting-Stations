@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use build spots to create tracks  and connect stations
+  m_text: Use build spots to create tracks and connect stations
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e464fc3f3eeda54491d5ef7544947a6, type: 2}
   m_sharedMaterial: {fileID: -9099213979286231388, guid: 3e464fc3f3eeda54491d5ef7544947a6, type: 2}
