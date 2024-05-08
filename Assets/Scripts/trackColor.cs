@@ -41,8 +41,11 @@ public class trackColor : MonoBehaviour
             if (col.gameObject.name == "Station(Clone)")
             {
                 station = true;
-                connections--;
-                if (connections == 0)
+                if (connections > -1)
+                {
+                    connections--;
+                }
+                    if (connections == 0)
                 {
                     connect = true;
                 }
@@ -61,6 +64,7 @@ public class trackColor : MonoBehaviour
             }
         }
     }
+    /*
     void OnCollisionEnter2D(Collision2D col)
     {
     
@@ -69,4 +73,5 @@ public class trackColor : MonoBehaviour
             build.money -= 10;
         }
     }
+    */
 }

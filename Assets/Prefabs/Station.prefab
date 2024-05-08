@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2961377779528411596}
   - component: {fileID: 4012001754744007461}
   - component: {fileID: 7576219048666192506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   build: {fileID: 6268489357834126177, guid: e30559db37de1304f8337e0dc8e00065, type: 3}
   a: {fileID: 0}
+  connected: 0
   sprit: {fileID: 0}
 --- !u!50 &4012001754744007461
 Rigidbody2D:

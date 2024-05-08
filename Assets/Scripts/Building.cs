@@ -64,14 +64,14 @@ public class Building : MonoBehaviour
 
         if (hit.collider)
         {
-            if (hit.collider.gameObject.tag == "Verts" && Input.GetMouseButtonDown(0) && pickedColor != none)
+            if (hit.collider.gameObject.tag == "Verts" && Input.GetMouseButtonDown(0) && pickedColor != none && money >= 25)
             {
                 money -= 25;
                 moneyText.text = "$" + money;
                 Instantiate(track, new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y, -1), transform.rotation);
                 Destroy(hit.collider.gameObject);
             }
-            if (hit.collider.gameObject.tag == "Horzs" && Input.GetMouseButtonDown(0) && pickedColor != none)
+            if (hit.collider.gameObject.tag == "Horzs" && Input.GetMouseButtonDown(0) && pickedColor != none && money >= 25)
             {
                 money -= 25;
                 moneyText.text = "$" + money;
