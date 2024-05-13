@@ -103,6 +103,8 @@ public class Spawning : MonoBehaviour
 
     public Building build;
 
+    public GameObject woo;
+
     void Awake ()
     {
         picker.Add(track0);
@@ -284,7 +286,7 @@ public class Spawning : MonoBehaviour
             stationNames.Remove(stationNames[k]);
         } else
         {
-            Debug.Log(positsGame.Count);
+            woo.SetActive(true);
         }
     }
 }

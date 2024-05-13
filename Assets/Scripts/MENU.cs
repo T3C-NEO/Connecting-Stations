@@ -42,4 +42,14 @@ public class MENU : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void ResetME()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameObject.Find("TimerTime").GetComponent<timerTIme>().mod = 1;
+    }
+    public void Next()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameObject.Find("TimerTime").GetComponent<timerTIme>().mod /= 2;
+    }
 }

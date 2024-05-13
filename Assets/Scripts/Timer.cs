@@ -72,25 +72,29 @@ public class Timer : MonoBehaviour
         else if (remainingTime <= 0)
         {
             mates2.Clear();
-            for(int i = 0; i < mates.Count; i++)
+            for (int i = 0; i < mates.Count; i++)
             {
                 mates2.AddRange(GameObject.FindGameObjectsWithTag(mates[i]));
                 mates2.RemoveAll(obj => obj.name == "Track 1(Clone)");
                 mates2.RemoveAll(obj => obj.name == "Track 2(Clone)");
             }
-            if (Mathf.RoundToInt(mates2.Count*0.33f) > scrip.connectedStations.Count)
+            if (Mathf.RoundToInt(mates2.Count * 0.33f) > scrip.connectedStations.Count)
             {
                 gameOver.SetActive(true);
                 gameOverButt.SetActive(true);
                 UI.SetActive(false);
             }
+            else
+            {
 
-            //mates.AddRange( GameObject.FindGameObjectsWithTag( "mateTag"));
-            remainingTime = 20*GameObject.Find("TimerTime").GetComponent<timerTIme>().mod;
-            moneyTime2 = 19;
-            //scrip2.money += (scrip.connectedStations.Count * 20);
-            scrip.SpawnStation();
-            //timerText.color = Color.red;
+                //mates.AddRange( GameObject.FindGameObjectsWithTag( "mateTag"));
+                remainingTime = 20 * GameObject.Find("TimerTime").GetComponent<timerTIme>().mod;
+                moneyTime2 = 19;
+                //scrip2.money += (scrip.connectedStations.Count * 20);
+                scrip.SpawnStation();
+                //timerText.color = Color.red;
+
+            }
         }
 
         if (remainingTime < moneyTime2)
