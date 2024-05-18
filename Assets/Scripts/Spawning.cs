@@ -105,6 +105,8 @@ public class Spawning : MonoBehaviour
 
     public GameObject woo;
 
+    public AudioSource bingBong;
+
     void Awake ()
     {
         picker.Add(track0);
@@ -260,6 +262,7 @@ public class Spawning : MonoBehaviour
     {
         if (positsGame.Count > 1)
         {
+            bingBong.Play();
             //summoning stations when you press space. trying to get random colors to work
             randomInt = Random.Range(0, randomColorList.Count);
             random = randomColorList[randomInt];
